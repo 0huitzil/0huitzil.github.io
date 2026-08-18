@@ -1,0 +1,19 @@
+# Jekyll build output (compiled HTML/CSS)
+_site/
+
+# Metadata and local caches
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Bundler/Ruby dependencies cached locally
+.bundle/
+vendor/
+
+
+# Optional: GitHub Pages dependency tracking if you don't want it committed
+Gemfile.lock
+
+# Operating system files
+.DS_Store
+Thumbs.db
