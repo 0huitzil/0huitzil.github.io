@@ -24,9 +24,9 @@ linkedin_url: https://www.linkedin.com/in/nat-castaneda-ruan-3a6a82202/
 github_url: https://github.com/0huitzil
 researchgate_url: https://www.researchgate.net/profile/Nat-Castaneda-Ruan
 orcid_url: https://orcid.org/0009-0000-5651-2636
+current_workplace: "Auckland Bioengineering Institute, University of Auckland"
 description: >- # this means to ignore newlines until "baseurl:"
-  Mathematical modeller and software developer. Currently working on the creation of 
-  computational models of anatomical structures using Python and OpenCMISS-Zinc. 
+  Mathematical modeller and software developer. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

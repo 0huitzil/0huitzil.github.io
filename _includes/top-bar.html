@@ -1,0 +1,32 @@
+<div class="top-bar">
+    <div class="top-bar-content">
+        <h1 class="page-banner-title">
+            <a href="{{ "/" | absolute_url }}">
+            {{ site.title | default: site.github.repository_name }}
+            </a>
+        </h1>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        &#9776;
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="top-nav" id="topNav">
+        {% for item in site.data.navigation %}
+            {% assign relative_item_url = item.link | relative_url %}
+            <a href="{{ relative_item_url }}" 
+            class="nav-btn {% if page.url == relative_item_url or page.url == item.link %}active{% endif %}">
+            {{ item.name }}
+            </a>
+        {% endfor %}
+        </nav>
+    </div>
+</div>
+
+<!-- Inline JavaScript for Menu Toggle -->
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function() {
+    document.getElementById('topNav').classList.toggle('open');
+  });
+</script>
