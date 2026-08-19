@@ -3,10 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
+title: Nat Castaneda Ruan
 ---
 
+# About me
 
-
+I am a mathemtical modeller and software developer. Currently working on the creation of 
+computational models of anatomical structures for healthcare-related research in acupuncture as part of the 
+[TARA](https://tara-repository.mgb.org/) project. I love applying my mathematical knowledge to the life sciences, from physiology to anatomy and epidemiology.
 # Work experience
 
 ## - Software developer (mathematical modeller)

@@ -19,7 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Nat Castaneda Ruan
-email: mat.castneda.ruan@gmail.com
+email: fcas077@aucklanduni.ac.nz
+linkedin_url: https://www.linkedin.com/in/nat-castaneda-ruan-3a6a82202/
+github_url: https://github.com/0huitzil
+researchgate_url: https://www.researchgate.net/profile/Nat-Castaneda-Ruan
+orcid_url: https://orcid.org/0009-0000-5651-2636
 description: >- # this means to ignore newlines until "baseurl:"
   Mathematical modeller and software developer. Currently working on the creation of 
   computational models of anatomical structures using Python and OpenCMISS-Zinc. 
@@ -34,10 +38,11 @@ plugins:
   - jekyll-feed
 
 
-logo: /assets/profile.jpg   # Optional path to a logo/avatar image
+logo: /assets/profile.jpeg   # Optional path to a logo/avatar image
+banner: /assets/background.jpeg
 github:
   is_project_page: false       # Set true if hosting on username.github.io/repo-name
-  is_user_page: true
+  is_user_page: false
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
