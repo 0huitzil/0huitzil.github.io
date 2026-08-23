@@ -94,6 +94,17 @@ html, body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+/* Enable bullet points for the sidebar list */
+.sidebar-contact ul {
+  list-style-type: circle !important; /* Force standard bullet points */
+  padding-left: 20px !important;    /* Indent list so bullets have room */
+  margin: 10px 0;
+}
+
+.sidebar-contact li {
+  margin-bottom: 8px;
+}
+
 /* --- Mobile Responsive Dropdown (Screens smaller than 600px) --- */
 @media (max-width: 600px) {
   .menu-toggle {
@@ -126,6 +137,56 @@ html, body {
   }
 }
 
+/* 1. Convert wrapper into a structured grid layout */
 .wrapper {
-    margin-top: 90px !important; 
+    margin-top: 90px !important;
+    display: grid !important;
+    grid-template-columns: 210px 1fr; /* 210px fixed sidebar, rest for content */
+    grid-template-rows: auto 1fr auto;  /* Content expands, footer stays at bottom */
+    grid-template-areas:
+      "header section"
+      "header section"
+      "footer footer";                 /* Footer spans the entire bottom row */
+    gap: 20px 40px;                    /* Row and column spacing */
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* 2. Assign Jekyll sections to grid areas & strip legacy floats */
+.wrapper > header {
+    grid-area: header;
+    float: none !important;
+    width: auto !important;
+    position: static !important;
+}
+
+.wrapper > section {
+    grid-area: section;
+    float: none !important;
+    width: auto !important;
+    min-width: 0; /* Prevents code blocks/tables from blowing out grid width */
+}
+
+.wrapper > footer {
+    grid-area: footer;
+    float: none !important;
+    width: 100% !important;
+    position: static !important;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e5e5;
+    clear: both !important;
+}
+
+/* 3. Mobile Fallback (Screens under 768px stack vertically) */
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "section"
+      "footer";
+  }
 }
