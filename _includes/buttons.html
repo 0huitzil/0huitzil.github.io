@@ -1,0 +1,19 @@
+<div class="pub-button-group">
+  {% if include.article_url %}
+    <a href="{{ include.article_url }}" target="_blank" rel="noopener noreferrer" class="site-btn pub-btn-details">
+        View Paper
+    </a>
+  {% endif %}
+
+  {% if include.code_url %}
+    <a href="{{ include.code_url }}" target="_blank" rel="noopener noreferrer" class="site-btn pub-btn-github">
+        View Code
+    </a>
+  {% endif %}
+
+  {% if include.dataset_url %}
+    <a href="{{ include.dataset_url }}" target="_blank" rel="noopener noreferrer" class="site-btn pub-btn-github">
+        View Dataset
+    </a>
+  {% endif %}
+</div>

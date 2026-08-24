@@ -16,7 +16,7 @@
         {% for item in site.data.navigation %}
             {% assign relative_item_url = item.link | relative_url %}
             <a href="{{ relative_item_url }}" 
-            class="nav-btn {% if page.url == relative_item_url or page.url == item.link %}active{% endif %}">
+            class="site-btn nav-btn {% if page.url == relative_item_url or page.url == item.link %}active{% endif %}">
             {{ item.name }}
             </a>
         {% endfor %}
