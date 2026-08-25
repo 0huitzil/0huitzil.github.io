@@ -1,5 +1,5 @@
 ---
 layout: default
-title: "A multiple-oscillator mechanism underlies antigen-induced Ca2+ oscillations in Jurkat T-cells"
+title: "Modelling the role of STIM1 and STIM2 in oscillations in T-lymphocytes"
 permalink: /publications/phd_paper_3/
 ---

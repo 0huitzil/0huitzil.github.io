@@ -1,5 +1,5 @@
 ---
 layout: default
-title: "A multiple-oscillator mechanism underlies antigen-induced Ca2+ oscillations in Jurkat T-cells"
+title: "A Model for the Coexistence of Competing Mechanisms for Oscillations in T-lymphocytes"
 permalink: /publications/phd_paper_2/
 ---

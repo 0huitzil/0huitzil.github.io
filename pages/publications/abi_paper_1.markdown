@@ -1,5 +1,5 @@
 ---
 layout: default
-title: "A multiple-oscillator mechanism underlies antigen-induced Ca2+ oscillations in Jurkat T-cells"
+title: "A 3D human whole-body model with integrated organs vasculature musculoskeletal and nervous systems for mapping nerves"
 permalink: /publications/abi_paper_1/
 ---

@@ -11,7 +11,7 @@ permalink: /publications/
 
 ## [A multiple-oscillator mechanism underlies antigen-induced Ca2+ oscillations in Jurkat T-cells]({{ "/publications/phd_paper_1/" | relative_url }})
 
-![Profile Photo]({{ "/assets/phd_paper1.jpg" | relative_url }})
+![Calciumtraces]({{ "/assets/phd_paper1.jpg" | relative_url }})
 
 {% include buttons.html 
    article_url="https://doi.org/10.1016/j.jbc.2023.105310" %}
