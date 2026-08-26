@@ -1,7 +1,13 @@
 <div class="pub-button-group">
+  {% if include.learnmore_url %}
+    <a href="{{ include.learnmore_url | relative_url }}" class="site-btn pub-btn-details">
+        Learn more
+    </a>
+  {% endif %}
+
   {% if include.article_url %}
     <a href="{{ include.article_url }}" target="_blank" rel="noopener noreferrer" class="site-btn pub-btn-details">
-        View Paper
+        View Publication
     </a>
   {% endif %}
 

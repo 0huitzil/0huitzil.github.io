@@ -1,8 +1,8 @@
-- name: Home
+- name: About me
   link: /
 - name: Publications
   link: /publications/
 - name: Current work
   link: /current_work/
-- name: About myself
-  link: /about/
+# - name: About myself
+#   link: /about/

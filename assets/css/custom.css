@@ -9,6 +9,33 @@ html, body {
     padding: 0 !important;
     overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
+
+/* 1. Base link styling within main content */
+section a:not(.site-btn),
+.wrapper section a:not(.site-btn) {
+  color: #0066cc;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 102, 204, 0.3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  border-bottom: none !important; /* Remove theme's default bottom border */
+  font-weight: inherit !important; /* Ensure hover never forces bold text */
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+/* 2. Hover and Focus states (strictly changes color/opacity, zero layout movement) */
+section a:not(.site-btn):hover,
+section a:not(.site-btn):focus,
+.wrapper section a:not(.site-btn):hover,
+.wrapper section a:not(.site-btn):focus {
+  color: #004c9e !important;
+  text-decoration-color: #004c9e !important;
+  text-decoration-thickness: 2px; /* Thicken underline without altering paragraph line height */
+  border: none !important;        /* Prevents layout shift from added borders */
+  padding: 0 !important;         /* Prevents layout shift from extra padding */
+  margin: 0 !important;          /* Prevents layout shift from extra margins */
+}
+
 /* Full-width top banner */
 .topbar {
     position: fixed !important;
@@ -66,15 +93,16 @@ Buttons
    1. SHARED BASE BUTTON CLASS (Structure)
    ========================================== */
 .site-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px 14px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border-radius: 8px !important;
+  padding: 6px 14px !important;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none !important;
-  white-space: nowrap;
+  white-space: nowrap !important;
   border: 1px solid transparent;
   transition: all 0.2s ease-in-out;
 }
@@ -89,7 +117,7 @@ Buttons
 
 /* Top Navigation Pills */
 .nav-btn {
-  border-radius: 20px;
+  /* border-radius: 20px; */
   background-color: #333333;
   color: #e0e0e0 !important;
   border-color: #444444;
@@ -108,7 +136,7 @@ Buttons
 
 /* Publication Details Button */
 .pub-btn-details {
-  border-radius: 6px;
+  /* border-radius: 6px; */
   background-color: #444444;
   color: #ffffff !important;
   border-color: #444444;
@@ -117,11 +145,12 @@ Buttons
 .pub-btn-details:hover {
   background-color: #8b5cf6;
   border-color: #666666;
+  text-decoration: none !important;
 }
 
 /* Publication GitHub Button */
 .pub-btn-github {
-  border-radius: 6px;
+  /* border-radius: 6px; */
   background-color: #444444;
   color: #ffffff !important;
   border-color: #444444;
@@ -130,6 +159,8 @@ Buttons
 .pub-btn-github:hover {
   background-color: #8b5cf6;
   border-color: #666666;
+  text-decoration: none !important;
+  transform: translateY(-1px);
 }
 
 /* ==========================================
@@ -163,6 +194,42 @@ Side bar
 .sidebar-contact li {
   margin-bottom: 8px;
 }
+
+/* Reusable Figure Component */
+.site-figure {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.site-figure img {
+    width: 100%;
+    height: auto;
+    /* border-radius: 8px; */
+    /* border: 1px solid #333333; */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+    display: block;
+    margin: 0 auto;
+}
+
+.site-figure figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #888888;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Alignment Modifier Classes */
+.site-figure.align-left {
+    float: left;
+    margin: 0 20px 15px 0;
+}
+
+.site-figure.align-right {
+    float: right;
+    margin: 0 0 15px 20px;
+}
+
 
 /* --- Mobile Responsive Dropdown (Screens smaller than 600px) --- */
 @media (max-width: 600px) {
