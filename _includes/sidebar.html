@@ -1,52 +1,92 @@
-
 <h1></h1>
 
-{% if site.logo %}
-    <img src="{{site.logo | relative_url}}" alt="Logo" />
+{% assign is_subpage = false %}
+{% if page.url != "/" and page.url != "/index.html" %}
+  {% assign is_subpage = true %}
 {% endif %}
 
-<p>{{ site.description | default: site.github.project_tagline }}</p>
+<div class="sidebar-content {% if is_subpage %}subpage-sidebar{% endif %}">
+  
+  <!-- Bio Header: Hidden on Mobile Subpages via CSS -->
+  <div class="desktop-only-bio">
+    {% if site.logo %}
+      <img src="{{ site.logo | relative_url }}" alt="Logo" />
+    {% endif %}
 
-<p><strong>{{site.current_workplace | default site.current_workplace}}</strong> </p>
+    <p>{{ site.description | default: site.github.project_tagline }}</p>
+    <p><strong>{{ site.current_workplace }}</strong></p>
 
-<!-- === CUSTOM SIDEBAR ADDITIONS START === -->
-<!-- <nav class="sidebar-nav">
-  <ul>
-    {% for item in site.data.navigation %}
-      <li>
-        <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</nav> -->
+    <hr>
+  </div>
 
-<hr>
+  <!-- Contact Links Row/List -->
+  <div class="sidebar-contact">
+    <p class="desktop-only-heading"><strong>Contact</strong></p>
+    <div class="contact-links-container">
+      
+      <!-- EMAIL -->
+      {% if site.email %}
+        <a href="mailto:{{ site.email }}" title="Email" class="contact-icon-link">
+          <!-- INSERT YOUR EMAIL SVG HERE -->
+          <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"/>
+          </svg>
+          <span class="link-label">Email</span>
+        </a>
+      {% endif %}
 
-<div class="sidebar-contact">
-  <p><strong>Contact</strong> </p>
-  <ul>
-    <li><a></a>Email: {{site.email}}</li>
-    <li><a href="{{site.github_url}}">GitHub</a></li>
-    <li><a href="{{site.researchgate_url}}">ResearchGate</a></li>
-    <li><a href="{{site.orcid_url}}">ORCiD</a></li>
-    <li><a href="{{site.linkedin_url}}">LinkedIn</a></li>
-  </ul>
+      <!-- GITHUB -->
+      {% if site.github_url %}
+        <a href="{{ site.github_url }}" title="GitHub" target="_blank" rel="noopener noreferrer" class="contact-icon-link">
+          <!-- INSERT YOUR GITHUB SVG HERE -->
+          <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+             <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path d="M280.5 426.5C214.5 418.5 168 371 168 309.5C168 284.5 177 257.5 192 239.5C185.5 223 186.5 188 194 173.5C214 171 241 181.5 257 196C276 190 296 187 320.5 187C345 187 365 190 383 195.5C398.5 181.5 426 171 446 173.5C453 187 454 222 447.5 239C463.5 258 472 283.5 472 309.5C472 371 425.5 417.5 358.5 426C375.5 437 387 461 387 488.5L387 540.5C387 555.5 399.5 564 414.5 558C505 523.5 576 433 576 321C576 179.5 461 64 319.5 64C178 64 64 179.5 64 321C64 432 134.5 524 229.5 558.5C243 563.5 256 554.5 256 541L256 501C249 504 240 506 232 506C199 506 179.5 488 165.5 454.5C160 441 154 433 142.5 431.5C136.5 431 134.5 428.5 134.5 425.5C134.5 419.5 144.5 415 154.5 415C169 415 181.5 424 194.5 442.5C204.5 457 215 463.5 227.5 463.5C240 463.5 248 459 259.5 447.5C268 439 274.5 431.5 280.5 426.5z"/>
+          </svg>
+          <span class="link-label">GitHub</span>
+        </a>
+      {% endif %}
+
+      <!-- RESEARCHGATE -->
+      {% if site.researchgate_url %}
+        <a href="{{ site.researchgate_url }}" title="ResearchGate" target="_blank" rel="noopener noreferrer" class="contact-icon-link">
+          <!-- INSERT YOUR RESEARCHGATE SVG HERE -->
+          <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path d="M96 96L96 544L544 544L544 96L96 96zM358.2 430.4C351.6 433.4 325 436.4 308.2 416.2C299 405.6 282.9 382.9 266 352.6C257.1 352.6 251.3 352.6 244.6 352L244.6 398.4C244.6 421.9 250.6 419.6 270.4 422.3L270.4 430.4C263.5 430.1 247.3 429.6 234.8 429.6C221.7 429.6 208.7 430.2 201.2 430.4L201.2 422.3C216.7 419.4 223.2 421 223.2 398.4L223.2 289C223.2 266.4 216.8 268 201.2 265.1L201.2 257C227 258 254.3 256.4 272.1 256.4C303.8 256.4 328 270.8 328 302C328 323.1 311.3 344.2 288.8 349.5C302.4 373.7 318.8 395.1 331 408.4C338.2 416.2 348.2 423.1 358.2 423.1L358.2 430.4zM381.1 295.4C357.8 295.4 348.9 279.7 348.9 263.2L348.9 231C348.9 218.8 357.7 200.6 382.9 200.6C408.1 200.6 413.3 218.5 413.3 218.5L402.6 225.7C402.6 225.7 397.1 213.2 382.9 213.2C375 213.2 363.2 220.5 363.2 232.9L363.2 259.7C363.2 273.1 369.8 283 381.1 283C395.2 283 402.6 272.1 402.6 256.2L384.7 256.2L384.7 245.5L415.1 245.5C415.1 266 419.8 295.4 381.1 295.4zM264.6 340.1C255.2 340.1 251 339.8 244.6 339.3L244.6 269.6C251 269 259.6 269 267.1 269C290.4 269 304.3 281.2 304.3 303.5C304.3 325.4 289.3 340.1 264.6 340.1z"/>
+          </svg>
+          <span class="link-label">ResearchGate</span>
+        </a>
+      {% endif %}
+
+      <!-- ORCID -->
+      {% if site.orcid_url %}
+        <a href="{{ site.orcid_url }}" title="ORCiD" target="_blank" rel="noopener noreferrer" class="contact-icon-link">
+          <!-- INSERT YOUR ORCID SVG HERE -->
+          <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path d="M358.7 252.2L312.8 252.2L312.8 406L360.3 406C427.9 406 443.4 354.7 443.4 329.1C443.4 287.5 416.9 252.2 358.7 252.2zM320 72C183 72 72 183 72 320C72 457 183 568 320 568C457 568 568 457 568 320C568 183 457 72 320 72zM239.2 432.8L209.4 432.8L209.4 225.3L239.2 225.3L239.2 432.8zM224.3 162.5C235.1 162.5 243.9 171.3 243.9 182.1C243.9 192.9 235.1 201.7 224.3 201.7C213.5 201.7 204.7 192.9 204.7 182.1C204.7 171.3 213.5 162.5 224.3 162.5zM364 433L283 433L283 225.3L363.6 225.3C440.3 225.3 474 280.1 474 329.2C474 382.5 432.3 433.1 364 433.1z"/>
+          </svg>
+          <span class="link-label">ORCiD</span>
+        </a>
+      {% endif %}
+
+      <!-- LINKEDIN -->
+      {% if site.linkedin_url %}
+        <a href="{{ site.linkedin_url }}" title="LinkedIn" target="_blank" rel="noopener noreferrer" class="contact-icon-link">
+          <!-- INSERT YOUR LINKEDIN SVG HERE -->
+          <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"/>
+          </svg>
+          
+          <span class="link-label">LinkedIn</span>
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+
 </div>
-    <!-- === CUSTOM SIDEBAR ADDITIONS END === -->
-
-
-{% if site.github.is_project_page %}
-<p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-{% endif %}
-
-{% if site.github.is_user_page %}
-<p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-{% endif %}
-
-{% if site.show_downloads %}
-<ul class="downloads">
-    <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-    <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-    <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-</ul>
-{% endif %}
