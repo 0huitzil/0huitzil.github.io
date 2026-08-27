@@ -9,7 +9,7 @@ permalink: /publications/abi_paper_wbs/
 
 {% include figures.html 
    src="/assets/abi_wbs.jpeg" 
-   alt="Calcium oscillations on T-cells" %}
+   alt="3D human whole-body model" %}
 
 {% include buttons.html 
    article_url="https://doi.org/10.26275/bbvg-gj86"
@@ -18,9 +18,9 @@ permalink: /publications/abi_paper_wbs/
 
 ### Summary:
 
-The 3D whole body is not only an extremely complex, multi-scale organism, it is also the 
+The 3D whole body is not only an extremely complex, multiscale organism, it is also the 
 primary purpose of my work at the Auckland Bioengineering Institute ([ABI]({{ "/publications/abi_paper_wbs/" | relative_url }})). 
 At the base of this model is the _human whole-body scaffold_ which is the canvas (or the system of coordinates, if you want to be precise)
-upon which we embed all the mayor organs, muscles, nerves and blood vessels of the human body. This 3D model represents an 
+upon which we embed all the mayor organs, muscles, nerves, and blood vessels of the human body. This 3D model represents an 
 enormous amount of work from a lot of different groups inside the [SPARC](https://sparc.science/) project over many years, and I am very
 grateful to be its latest steward. 

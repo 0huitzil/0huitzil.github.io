@@ -17,8 +17,33 @@ permalink: /publications/phd_paper_3/
 
 ### Summary:
 
-This is the first out of three papers that came out of a collaboration between my supervisor James Sneyd and the [Trebak Lab](https://trebaklab.com/) at the University of Pittsburgh. The team at the Trebak Lab were _calcium signalling_ in T-cells; in other words, they were studying the transport of Ca<sup>2+</sup> in and out of these cells. It was pretty well known at the time of publication that Ca<sup>2+</sup> signals in these cells were driven by a Ca<sup>2+</sup> release-activated Ca<sup>2+</sup> (**CRAC**) channel, which sits on the membrane of the cell. So a natural question for them to ask was: what happens when that channel stops working? 
+After successfully coming up with a hypothesis regarding the two oscillatory mechanisms 
+seen in T-cells in our [previous paper]({{ "/publications/phd_paper_2/" | relative_url }}), 
+there remained a very annoyingly difficult to answer question: “What was the role of
+STIM1 and STIM2 in this whole ordeal?” We knew that the **external oscillatory mechanism** (CRAC)
+relied on these two proteins to function. We also knew that oscillations in cells with both types of STIM (purple) 
+have a sinusoidal shape, and that those with neither type (now shown here) consisted of spikes and bursts.
+To complicate things even more, cells without STIM2 (red) or STIM1 (blue) exhibited oscillations
+that sometimes had spikes, and sometimes had a Ca<sup>2+</sup> 'swell'(not a full sinusoidal wave, but almost). 
 
-To do that, they disabled the two molecular 'switches' that make up the CRAC channel: the **STIM1** and **STIM2** proteins. In the image above, you can see the type of oscillations seen in a 'healthy' cell in black (WT), and those observed in a cell without STIM1 in red (STIM1 KO) and without STIM2 in blue (STIM2 KO). What the team were expecting to see was oscillations disappearing in cells without STIM1 and/or STIM2, What they found instead is that a second type of oscillations rises in these scenarios. 
+{% include figures.html 
+   src="/assets/phd_paper3_data.png" 
+   alt="Calcium oscillations on T-cells" %}
 
-My supervisor and I were then approached to create a model which could reproduce these results (and hopefully shine some light on _why_ this was happening). A preliminary version of our mathematical model is included in the later section of this paper, and the experimental data will be the basis of the two others papers I published on my PhD work. 
+It was becoming obvious that in this intermediate stages, both mechanisms could cooperate to 
+create a 'mixed' or 'hybrid' type of oscillation. But we still needed to show computational 
+evidence, at least, that this was the case. So back to the drawing board we went and what we came 
+up with a simple model of interaction between STIM1 (blue) and STIM2 (red), which is shown at the top of this page.
+In short, this model proposed that STIM1 and STIM2 can both enable Ca<sup>2+</sup> influx, but when they
+are together they can cooperate to create a transport mechanism stronger than the sum of its parts (purple).
+This model not only allowed us to performed simulations where only one type of STIM is present,
+but it also gave us oscillations with both 'spikes' and 'swells'.
+
+{% include figures.html 
+   src="/assets/phd_paper3_simulations.png" 
+   alt="Computational simulation of a model of calcium oscillations" %}
+
+Which was pretty exciting! Problem solved, right? Well, we still needed to show that the
+hybrid oscillations were possible from a mathematical point of view (which would give us a 
+better understanding of how the two mechanisms work together), but time became my greatest enemy 
+and I had to finish my PhD studies before tackling that question. Perhaps one day… 
