@@ -52,24 +52,25 @@ interactive visualization tools, mapping interfaces and even statistical analysi
 
 ## Personal life
 
-Aside from mathematics, my passion is history in all its varieties and flavours. 
+Aside from mathematics, I really enjoy studying history in all its varieties and flavours. 
 I believe that understanding the past and the lives of those that came before us
-can only enrich our current understanding of the world. And at the same time give us a glimpse 
-into completely different ways of living. My primary passion (and endless topic of conversation)
-is Mexican history, but my head is filled with fun facts from all periods and cultures. 
+can only enrich our current understanding of the world.  My favorite historical 
+subject is Mexican history, which I could talk endlessly about, 
+but my head is filled with fun facts from all periods and cultures. 
 
 {% include image-grid.html 
    images="/assets/personal_2.jpeg | /assets/personal_1.jpeg" 
-   alts="Me | Also me " %}
+   alts="Me | Also me" %}
 
 In the last couple of years I took up weightlifting, which I enjoy way more than I thought I would. 
-And I am currently training to run my first 11km race. Some of my indoor hobbies include 
+I am also currently training to run my first 11km race. Some of my indoor hobbies include 
 miniature painting, tabletop games, and videogames that take way too much time to figure out
-(looking at you Path of Exile ¬¬). My other artistic passion is taking melancholic pictures. 
+(looking at you Path of Exile ¬¬). I wouldn't call myself a photographer, but I really like 
+talking melancholic pictures of landscapes. 
 
 {% include image-grid.html 
    images="/assets/personal_miniatures.png | /assets/personal_bike.jpeg" 
-   alts="Figure 1 | Figure 2 " %}
+   alts="Figure 1 | Figure 2" %}
 
 I believe in the power of local community organisations, not only as a provider or 
 services and resources, but also as a way to connect with the place one lives in. I spend 
