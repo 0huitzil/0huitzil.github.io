@@ -6,16 +6,9 @@ permalink: /publications/phd_paper_2/
 
 ## A Model for the Coexistence of Competing Mechanisms for Oscillations in T-lymphocytes
 
-
-{% include figures.html 
-   src="/assets/phd_paper2_full.png" 
-   alt="Model of calcium oscillations" %}
-
 {% include buttons.html 
    article_url="https://doi.org/10.1007/s11538-024-01317-w"
    code_url="https://github.com/0huitzil/jurkatModel" %}
-
-### Summary:
 
 Following up from our [first paper]({{ "/publications/phd_paper_1/" | relative_url }}) 
 with the [Trebak Lab](https://trebaklab.com/), 
@@ -36,12 +29,17 @@ external Ca<sup>2+</sup> (red, salmon, and orange) consisted of spikes and peaks
 
 After many long nights of thinking about this phenomenon, we had an idea: what if the cells 
 actually contained **two oscillatory mechanisms**? The **external mechanism** 
-(shown in green in the diagram at the top of the page) which was well studied at the time, 
+(shown in green) which was well studied at the time, 
 and an **internal mechanism** (red) which was overshadowed in 'normal' circumstances, 
 but resurfaces once the external mechanism was silenced (e.g. due to lack of an external source)? 
-With this in mind we set off to create a system of ODEs (represented by the same diagram) 
+With this in mind we set off to create a system of ODEs (represented by the following diagram)
 which could, under the right conditions, replicate these experimental results. 
-The following picture shows some simulations of our model:
+
+{% include figures.html 
+   src="/assets/phd_paper2_full.png" 
+   alt="Model of calcium oscillations" %}
+
+With the model in place we now could run simulations, like the ones in the following image:
 
 {% include figures.html 
    src="/assets/phd_paper2_simulations.png" 

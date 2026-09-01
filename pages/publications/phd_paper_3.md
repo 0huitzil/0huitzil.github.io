@@ -7,15 +7,11 @@ permalink: /publications/phd_paper_3/
 ## Modelling the role of STIM1 and STIM2 in oscillations in T-lymphocytes
 
 
-{% include figures.html 
-   src="/assets/phd_paper3.png" 
-   alt="Model of STIM binding" %}
 
 {% include buttons.html 
    article_url="https://doi.org/10.1007/s11538-025-01559-2"
    code_url="https://github.com/0huitzil/jurkatSTIMKO" %}
 
-### Summary:
 
 After successfully coming up with a hypothesis regarding the two oscillatory mechanisms 
 seen in T-cells in our [previous paper]({{ "/publications/phd_paper_2/" | relative_url }}), 
@@ -33,11 +29,20 @@ that sometimes had spikes, and sometimes had a Ca<sup>2+</sup> 'swell'(not a ful
 It was becoming obvious that in this intermediate stages, both mechanisms could cooperate to 
 create a 'mixed' or 'hybrid' type of oscillation. But we still needed to show computational 
 evidence, at least, that this was the case. So back to the drawing board we went and what we came 
-up with a simple model of interaction between STIM1 (blue) and STIM2 (red), which is shown at the top of this page.
+up with a simple model of interaction between STIM1 (blue) and STIM2 (red), as in the following diagram.
 In short, this model proposed that STIM1 and STIM2 can both enable Ca<sup>2+</sup> influx, but when they
 are together they can cooperate to create a transport mechanism stronger than the sum of its parts (purple).
-This model not only allowed us to performed simulations where only one type of STIM is present,
-but it also gave us oscillations with both 'spikes' and 'swells'.
+{% include figures.html 
+   src="/assets/phd_paper3.png" 
+   alt="Model of STIM binding" %}
+
+
+This model not only allowed us to performed simulations of cells under these three scenarios:
+-  with both STIMs are present (purple),
+which have the characteristic sinusoidal shape
+- without STIM1 (red), comprised of
+both 'spikes' and 'swells' but that only oscillated in a small range of values
+- without STIM2 (blue) similar to the previous case, but with more prominent 'swells'
 
 {% include figures.html 
    src="/assets/phd_paper3_simulations.png" 

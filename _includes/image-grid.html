@@ -1,0 +1,21 @@
+{% assign imgs = include.images | split: "|" %}
+{% assign alts = include.alts | split: "|" %}
+{% assign caps = include.captions | split: "|" %}
+{% assign links = include.links | split: "|" %}
+{% assign layout_class = include.layout | default: '' %}
+
+<div class="image-grid {{ layout_class }}">
+  {% for img in imgs %}
+    {% assign current_img = img | strip %}
+    {% assign current_link = links[forloop.index0] | strip %}
+    
+    <figure class="site-figure">
+      <a href="{% if current_link != blank %}{{ current_link }}{% else %}{{ current_img }}{% endif %}">
+        <img src="{{ current_img }}" alt="{{ alts[forloop.index0] | default: '' | strip }}">
+      </a>
+      {% if caps[forloop.index0] %}
+        <figcaption>{{ caps[forloop.index0] | strip }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endfor %}
+</div>

@@ -4,7 +4,7 @@
 :root {
   /* Brand & Accent Colors */
   --color-primary: #8b5cf6;       /* Main Purple Accent */
-  --color-primary-hover: #7c3aed; /* Slightly darker purple for hover */
+  --color-primary-hover: #7c3aed; /* Darker purple for hover */
   --color-link: #0066cc;          /* Base Link Blue */
   --color-link-hover: #004c9e;    /* Hover Link Blue */
 
@@ -18,6 +18,7 @@
 
   /* Typography Colors */
   --text-light: #ffffff;
+  --text-dark: #000000;
   --text-muted: #e0e0e0;
   --text-caption: #888888;
 }
@@ -78,7 +79,7 @@ section a:not(.site-btn):focus {
 
 .topbar-content {
   width: 100%;
-  max-width: 860px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 15px;
   display: flex;
@@ -194,9 +195,10 @@ section a:not(.site-btn):focus {
     "header section"
     "footer footer";
   gap: 20px 40px;
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   padding: 0 20px;
 }
 
@@ -210,6 +212,7 @@ section a:not(.site-btn):focus {
 .wrapper > section {
   grid-area: section;
   float: none !important;
+  max-width: 100% !important;
   width: auto !important;
   min-width: 0;
 }
@@ -228,6 +231,31 @@ section a:not(.site-btn):focus {
 /* ============================================================
    7. SIDEBAR & CONTACT LINKS
    ============================================================ */
+/* Sidebar Title & Note Block */
+.sidebar-title-block {
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.sidebar-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin: 0 0 4px 0 !important;
+  padding: 0;
+}
+
+.sidebar-note {
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text-caption);
+  margin: 0 !important;
+  padding: 0;
+}
+
+/* Sidebar Contact Links */
 .sidebar-contact ul {
   list-style-type: circle !important;
   padding-left: 20px !important;
@@ -265,7 +293,10 @@ section a:not(.site-btn):focus {
   flex-shrink: 0;
 }
 
-/* Reusable Figure Component */
+/* ============================================================
+   8. FIGURE & IMAGE GRID COMPONENTS
+   ============================================================ */
+/* Reusable Single Figure Component */
 .site-figure {
   margin: 24px 0;
   text-align: center;
@@ -296,12 +327,164 @@ section a:not(.site-btn):focus {
   margin: 0 0 15px 20px;
 }
 
+/* Base Multi-Image Grid Container */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.image-grid .site-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-grid .site-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.image-grid .site-figure a {
+  display: block;
+  width: 100%;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.image-grid .site-figure a:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Custom Layout Variant: Featured Left (A Spans Height | B over C) */
+.image-grid.layout-featured-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "feat top"
+    "feat bottom";
+  gap: 16px;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.image-grid.layout-featured-left .site-figure:nth-child(1) {
+  grid-area: feat;
+}
+
+.image-grid.layout-featured-left .site-figure:nth-child(2) {
+  grid-area: top;
+}
+
+.image-grid.layout-featured-left .site-figure:nth-child(3) {
+  grid-area: bottom;
+}
+
+.image-grid.layout-featured-left .site-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.image-grid.layout-featured-left .site-figure a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-grid.layout-featured-left .site-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
 /* ============================================================
-   8. MOBILE RESPONSIVE MEDIA QUERIES
+   9. MEDIA QUERIES (TABLET & MOBILE)
    ============================================================ */
 
-/* Small Screens / Mobile Navigation Dropdown */
+/* --- TABLET GENERAL & LOGO VISIBILITY (Max 1024px) --- */
+@media (max-width: 1024px) {
+  .wrapper header img,
+  .site-logo,
+  .site-logo-link img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .wrapper {
+    grid-template-columns: 190px 1fr !important;
+    gap: 15px 24px !important;
+  }
+}
+
+/* --- IPAD LANDSCAPE (835px to 1194px) --- */
+@media screen and (min-width: 835px) and (max-width: 1194px) and (orientation: landscape) {
+  .top-nav {
+    display: flex !important;
+    gap: 6px !important;
+  }
+
+  .nav-btn {
+    padding: 5px 10px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* --- IPAD PORTRAIT (601px to 834px) --- */
+@media screen and (min-width: 601px) and (max-width: 834px) and (orientation: portrait) {
+  .top-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    gap: 4px 6px !important;
+  }
+
+  .nav-btn {
+    padding: 4px 8px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+/* --- SMALL SCREENS / MOBILE STACK (Max 600px) --- */
 @media (max-width: 600px) {
+  .wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .wrapper section {
+    order: 1 !important;
+  }
+
+  .wrapper header:has(.subpage-sidebar) {
+    order: 2 !important;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-muted);
+  }
+
+  .wrapper footer {
+    order: 3 !important;
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -328,32 +511,15 @@ section a:not(.site-btn):focus {
     width: 100%;
     text-align: center;
   }
-}
 
-/* Subpage Layout & Bottom Header Shift */
-@media (max-width: 768px) {
-  .wrapper {
-    display: flex !important;
-    flex-direction: column !important;
+  .image-grid.layout-featured-left {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "feat"
+      "top"
+      "bottom";
   }
 
-  .wrapper section {
-    order: 1 !important;
-  }
-
-  /* Move subpage header below main content */
-  .wrapper header:has(.subpage-sidebar) {
-    order: 2 !important;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border-muted);
-  }
-
-  .wrapper footer {
-    order: 3 !important;
-  }
-
-  /* Subpage Sidebar Icon Bar Modifications */
   .subpage-sidebar .desktop-only-bio,
   .subpage-sidebar .desktop-only-heading {
     display: none !important;

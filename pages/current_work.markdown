@@ -21,13 +21,19 @@ The aim of the SPARC project is to map the very complicated system of nerves and
 body (although we do have models for some animals as well). One of the key tools to achieve this 
 objective is the 3D whole body model, which is the result of many years of cross-referencing
 between anatomical data and computational tools. 
-You can learn more about it [here]({{ "/publications/abi_paper_wbs/" | relative_url }})
+You can learn more about it [here]({{ "/publications/abi_paper_wbs/" | relative_url }}). We also
+create smaller models for individual pars of the nervous system, like the 
+[trigeminal nerve]({{ "/publications/abi_paper_trigeminal_nerve/" | relative_url }}) or the 
+[dorsal root ganglion]({{ "/publications/abi_paper_drg/" | relative_url }}).
 
-{% include figures.html 
-   src="/assets/abi_wbs.jpeg" 
-   alt="3D human whole-body model" %}
+{% include image-grid.html 
+   layout="layout-featured-left"
+   images="/assets/abi_wbs.jpeg | /assets/abi_trigeminal_nerve.jpeg | /assets/abi_drg.jpeg" 
+   alts="Whole-body scaffold | Trigeminal-nerve | Dorsal root ganglion" 
+   links="/publications/abi_paper_wbs/ | /publications/abi_paper_trigeminal_nerve/ | /publications/abi_paper_drg/ "%}
 
-This model includes all mayor nerves, organs, muscles, and blood vessels of the body. It is 
+
+The 3D whole-body model includes all mayor nerves, organs, muscles, and blood vessels of the body. It is 
 under constant development, with new features added as they are needed. For example, you might
 notice that the model does not have much in the way of a hand these days (its more of a flipper, really). 
 My latest task as part of the software team is to develop a new hand scaffold, that both is lightweight 
@@ -47,7 +53,7 @@ bones that comprise it.
    alt="3D human whole-body model" %}
 
 Of course this mesh is an _idealized_ version of a hand, with the real thing being much more 
-complicadted. But one of the advantages of creating a finite element representation of this object
+complicated. But one of the advantages of creating a finite element representation of this object
 is that we can **fit** this mesh to whatever experimental data we managed to get our _hands_ on. Like, for example,
 a 3D reconstruction of a hand made by a small scale scanner. 
 

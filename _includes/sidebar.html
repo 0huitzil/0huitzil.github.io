@@ -1,4 +1,4 @@
-<h1></h1>
+
 
 {% assign is_subpage = false %}
 {% if page.url != "/" and page.url != "/index.html" %}
@@ -12,7 +12,11 @@
     {% if site.logo %}
       <img src="{{ site.logo | relative_url }}" alt="Logo" />
     {% endif %}
-
+    <!-- New Title & Note block -->
+      <div class="sidebar-title-block">
+        <h1 class="sidebar-title">{{site.title}}</h1>
+        <span class="sidebar-note">(she/her)</span>
+      </div>
     <p>{{ site.description | default: site.github.project_tagline }}</p>
     <p><strong>{{ site.current_workplace }}</strong></p>
 
