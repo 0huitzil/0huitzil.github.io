@@ -1,18 +1,30 @@
 {% assign imgs = include.images | split: "|" %}
 {% assign alts = include.alts | split: "|" %}
 {% assign caps = include.captions | split: "|" %}
-{% assign links = include.links | split: "|" %}
 {% assign layout_class = include.layout | default: '' %}
+
+{% if include.links %}
+  {% assign links = include.links | split: "|" %}
+{% endif %}
 
 <div class="image-grid {{ layout_class }}">
   {% for img in imgs %}
     {% assign current_img = img | strip %}
-    {% assign current_link = links[forloop.index0] | strip %}
+    {% assign current_link = nil %}
+    
+    {% if include.links and links[forloop.index0] %}
+      {% assign current_link = links[forloop.index0] | strip %}
+    {% endif %}
     
     <figure class="site-figure">
-      <a href="{% if current_link != blank %}{{ current_link }}{% else %}{{ current_img }}{% endif %}">
+      {% if current_link and current_link != '' %}
+        <a href="{{ current_link }}">
+          <img src="{{ current_img }}" alt="{{ alts[forloop.index0] | default: '' | strip }}">
+        </a>
+      {% else %}
         <img src="{{ current_img }}" alt="{{ alts[forloop.index0] | default: '' | strip }}">
-      </a>
+      {% endif %}
+      
       {% if caps[forloop.index0] %}
         <figcaption>{{ caps[forloop.index0] | strip }}</figcaption>
       {% endif %}
