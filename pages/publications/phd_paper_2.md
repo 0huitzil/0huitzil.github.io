@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "A Model for the Coexistence of Competing Mechanisms for Oscillations in T-lymphocytes"
+title: "A Model for the Coexistence of Competing Mechanisms for Ca2+ Oscillations in T-lymphocytes"
 permalink: /publications/phd_paper_2/
 ---
 
-## A Model for the Coexistence of Competing Mechanisms for Oscillations in T-lymphocytes
+## A Model for the Coexistence of Competing Mechanisms for Ca<sup>2+</sup> Oscillations in T-lymphocytes
 
 {% include buttons.html 
    article_url="https://doi.org/10.1007/s11538-024-01317-w"

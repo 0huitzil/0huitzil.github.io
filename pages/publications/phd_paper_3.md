@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Modelling the role of STIM1 and STIM2 in oscillations in T-lymphocytes"
+title: "Modelling the role of STIM1 and STIM2 in Ca2+ oscillations in T-lymphocytes"
 permalink: /publications/phd_paper_3/
 ---
 
-## Modelling the role of STIM1 and STIM2 in oscillations in T-lymphocytes
+## Modelling the role of STIM1 and STIM2 in Ca<sup>2+</sup> oscillations in T-lymphocytes
 
 
 
