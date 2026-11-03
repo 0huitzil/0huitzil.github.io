@@ -1,0 +1,86 @@
+/* ============================================================
+   MAIN LAYOUT (DESKTOP GRID)   (_layouts/default.html)
+   ============================================================ */
+.wrapper {
+  margin-top: 90px !important;
+  display: grid !important;
+  grid-template-columns: 210px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header section"
+    "header section"
+    "footer footer";
+  gap: 20px 40px;
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 20px;
+}
+
+.wrapper > header {
+  grid-area: header;
+  float: none !important;
+  width: auto !important;
+  position: static !important;
+}
+
+.wrapper > section {
+  grid-area: section;
+  float: none !important;
+  max-width: 100% !important;
+  width: auto !important;
+  min-width: 0;
+}
+
+.wrapper > footer {
+  grid-area: footer;
+  float: none !important;
+  width: 100% !important;
+  position: static !important;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-light);
+  clear: both !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: $bp-tablet) {
+  .wrapper header img,
+  .site-logo,
+  .site-logo-link img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .wrapper {
+    grid-template-columns: 190px 1fr !important;
+    gap: 15px 24px !important;
+  }
+}
+
+/* Mobile: stack content first, then sidebar, then footer */
+@media (max-width: $bp-mobile) {
+  .wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .wrapper section {
+    order: 1 !important;
+  }
+
+  .wrapper header:has(.subpage-sidebar) {
+    order: 2 !important;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-muted);
+  }
+
+  .wrapper footer {
+    order: 3 !important;
+  }
+}

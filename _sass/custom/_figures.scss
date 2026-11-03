@@ -1,0 +1,119 @@
+/* ============================================================
+   FIGURE & IMAGE GRID COMPONENTS
+   (_includes/figures.html, _includes/image-grid.html)
+   ============================================================ */
+/* Reusable Single Figure Component */
+.site-figure {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.site-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.site-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-caption);
+  font-style: italic;
+  text-align: center;
+}
+
+.site-figure.align-left {
+  float: left;
+  margin: 0 20px 15px 0;
+}
+
+.site-figure.align-right {
+  float: right;
+  margin: 0 0 15px 20px;
+}
+
+/* Base Multi-Image Grid Container */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.image-grid .site-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-grid .site-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.image-grid .site-figure a {
+  display: block;
+  width: 100%;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.image-grid .site-figure a:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Layout Variant: Featured Left (A spans height | B over C)
+   Only overrides what differs from the base .image-grid rules. */
+.image-grid.layout-featured-left {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "feat top"
+    "feat bottom";
+}
+
+.image-grid.layout-featured-left .site-figure:nth-child(1) {
+  grid-area: feat;
+}
+
+.image-grid.layout-featured-left .site-figure:nth-child(2) {
+  grid-area: top;
+}
+
+.image-grid.layout-featured-left .site-figure:nth-child(3) {
+  grid-area: bottom;
+}
+
+.image-grid.layout-featured-left .site-figure {
+  height: 100%;
+}
+
+.image-grid.layout-featured-left .site-figure a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-grid.layout-featured-left .site-figure img {
+  height: 100%;
+}
+
+/* --- Responsive --- */
+@media (max-width: $bp-mobile) {
+  .image-grid.layout-featured-left {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "feat"
+      "top"
+      "bottom";
+  }
+}

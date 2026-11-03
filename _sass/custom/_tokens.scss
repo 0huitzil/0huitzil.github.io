@@ -1,0 +1,36 @@
+/* ============================================================
+   DESIGN TOKENS
+   Sass variables are used for breakpoints because CSS custom
+   properties cannot be used inside media queries.
+   ============================================================ */
+
+/* Breakpoints */
+$bp-mobile: 600px;              // phones: stacked layout + hamburger menu
+$bp-tablet-portrait-min: 601px;
+$bp-tablet-portrait-max: 834px;
+$bp-tablet-landscape-min: 835px;
+$bp-tablet-landscape-max: 1194px;
+$bp-tablet: 1024px;             // narrower sidebar column
+
+:root {
+  /* Brand & Accent Colors */
+  --color-primary: #8b5cf6;       /* Main Purple Accent */
+  --color-primary-hover: #7c3aed; /* Darker purple for hover */
+  --color-link: #0066cc;          /* Base Link Blue */
+  --color-link-hover: #004c9e;    /* Hover Link Blue */
+  --color-link-underline: rgba(0, 102, 204, 0.3); /* Link Blue @ 30% */
+
+  /* Neutral Surface Colors */
+  --bg-topbar: #222222;
+  --bg-dark-card: #333333;
+  --bg-dark-dropdown: #444444;
+  --border-dark: #444444;
+  --border-muted: #333333;
+  --border-light: #e5e5e5;
+
+  /* Typography Colors */
+  --text-light: #ffffff;
+  --text-dark: #000000;
+  --text-muted: #e0e0e0;
+  --text-caption: #888888;
+}

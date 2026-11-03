@@ -1,0 +1,16 @@
+/* ============================================================
+   GLOBAL RESETS & BASE STYLES
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden; /* Prevents horizontal scroll leaks */
+}
+
+@view-transition {
+  navigation: auto;
+}

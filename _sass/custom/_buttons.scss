@@ -1,0 +1,85 @@
+/* ============================================================
+   BUTTON COMPONENTS   (_includes/buttons.html)
+   ============================================================ */
+/* Base Button Class */
+.site-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border-radius: 8px !important;
+  padding: 6px 14px !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.site-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Top Navigation Pills */
+.nav-btn {
+  background-color: var(--bg-dark-card);
+  color: var(--text-muted) !important;
+  border-color: var(--border-dark);
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background-color: var(--color-primary);
+  color: var(--text-light) !important;
+  border-color: var(--color-primary);
+}
+
+.nav-btn.active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Publication Button Row */
+.pub-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 24px 0;
+}
+
+/* Publication Buttons (Details & GitHub) */
+.pub-btn-details,
+.pub-btn-github {
+  background-color: var(--border-dark);
+  color: var(--text-light) !important;
+  border-color: var(--border-dark);
+}
+
+.pub-btn-details:hover,
+.pub-btn-github:hover {
+  background-color: var(--color-primary);
+  border-color: var(--border-dark);
+  text-decoration: none !important;
+}
+
+/* --- Responsive --- */
+@media screen and (min-width: $bp-tablet-landscape-min) and (max-width: $bp-tablet-landscape-max) and (orientation: landscape) {
+  .nav-btn {
+    padding: 5px 10px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media screen and (min-width: $bp-tablet-portrait-min) and (max-width: $bp-tablet-portrait-max) and (orientation: portrait) {
+  .nav-btn {
+    padding: 4px 8px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

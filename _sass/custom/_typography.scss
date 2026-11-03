@@ -1,0 +1,23 @@
+/* ============================================================
+   TYPOGRAPHY & INLINE LINKS
+   ============================================================ */
+section a:not(.site-btn) {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  border-bottom: none !important;  /* Strip Jekyll theme defaults */
+  font-weight: inherit !important; /* Prevent layout shift on hover */
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+section a:not(.site-btn):hover,
+section a:not(.site-btn):focus {
+  color: var(--color-link-hover) !important;
+  text-decoration-color: var(--color-link-hover) !important;
+  text-decoration-thickness: 2px;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
